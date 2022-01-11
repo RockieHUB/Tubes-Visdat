@@ -69,8 +69,8 @@ source = ColumnDataSource(data={
     'x': data.loc[1985].Total_Bunuh_Diri,
     'y': data.loc[1985].Populasi,
     'Negara': data.loc[1985].Negara,
-    'Jenis Kelamin': data.loc[1985].Jenis_Kelamin,
-    'Rentang Usia': data.loc[1985].Umur,
+    'Jenis_Kelamin': data.loc[1985].Jenis_Kelamin,
+    'Umur': data.loc[1985].Umur,
     'Generasi': data.loc[1985].Generasi
     })
 
@@ -98,11 +98,11 @@ def update_plot(attr, old, new):
     plot.yaxis.axis_label = y
     # new data
     new_data = {
-    'x': data.loc[yr, x],
-    'y': data.loc[yr, y],
+    'x': data.loc[yr][x],
+    'y': data.loc[yr][y],
     'Negara': data.loc[yr].Negara,
-    'Jenis Kelamin': data.loc[yr].Jenis_Kelamin,
-    'Rentang Usia': data.loc[yr].Umur,
+    'Jenis_Kelamin': data.loc[yr].Jenis_Kelamin,
+    'Umur': data.loc[yr].Umur,
     'Generasi': data.loc[yr].Generasi
     }
     source.data = new_data
