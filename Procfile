@@ -1,1 +1,1 @@
-web: bokeh serve --port=$PORT --allow-websocket-origin=mainVisdat.herokuapp.com --address=0.0.0.0 --use-xheaders mainVisdat.py
+web: bokeh serve --port=$PORT --allow-websocket-origin=visdat_mmh-2022.herokuapp.com --address=0.0.0.0 --use-xheaders mainVisdat.py
