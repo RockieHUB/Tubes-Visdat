@@ -98,8 +98,8 @@ def update_plot(attr, old, new):
     plot.yaxis.axis_label = y
     # new data
     new_data = {
-    'x': data.loc[yr][x],
-    'y': data.loc[yr][y],
+    'x': data.loc[yr, x],
+    'y': data.loc[yr, y],
     'Negara': data.loc[yr].Negara,
     'Jenis Kelamin': data.loc[yr].Jenis_Kelamin,
     'Rentang Usia': data.loc[yr].Umur,
