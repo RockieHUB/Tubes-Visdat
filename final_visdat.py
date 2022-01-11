@@ -81,7 +81,7 @@ plot = figure(title='1985', x_axis_label='Data Kordinat X', y_axis_label='Data K
                                            ("Rentang Usia : ","@Umur")], mode="hline")])
 
 # Add a circle glyph to the figure p
-plot.circle(x='x', y='y', source=source, fill_alpha=0.8,
+plot.circle(x='x', y='y', source=source, fill_alpha=1,
            color=dict(field='Generasi', transform=color_mapper), legend='Generasi')
 
 # Set the legend and axis attributes
@@ -98,8 +98,8 @@ def update_plot(attr, old, new):
     plot.yaxis.axis_label = y
     # new data
     new_data = {
-    'x': data.loc[yr][x],
-    'y': data.loc[yr][y],
+    'x': data.loc[yr,x],
+    'y': data.loc[yr,y],
     'Negara': data.loc[yr].Negara,
     'Jenis_Kelamin': data.loc[yr].Jenis_Kelamin,
     'Umur': data.loc[yr].Umur,
