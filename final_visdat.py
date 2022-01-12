@@ -56,7 +56,13 @@ data.Pendapatan_per_Kapita = data.Pendapatan_per_Kapita.astype(int)
 # Generasi
 data.Generasi = data.Generasi.astype(str)
 
+#Filter Nilai Bunuh Diri yang = 0
+data = data[data['Total_Bunuh_Diri'] > 0]
+data.drop_duplicates(inplace = True)
+data.dropna(how="any",inplace = True)
+
 data.set_index('Tahun', inplace=True)
+data.sort_index(inplace = True)
 
 # Make a list of the unique values from the Generasi
 gen_list = data.Generasi.unique().tolist()
@@ -81,7 +87,7 @@ plot = figure(title='1985', x_axis_label='Data Kordinat X', y_axis_label='Data K
                                            ("Rentang Usia : ","@Umur")], mode="hline")])
 
 # Add a circle glyph to the figure p
-plot.circle(x='x', y='y', source=source, fill_alpha=1,
+plot.circle(x='x', y='y', source=source, fill_alpha=0.8,
            color=dict(field='Generasi', transform=color_mapper), legend='Generasi')
 
 # Set the legend and axis attributes
