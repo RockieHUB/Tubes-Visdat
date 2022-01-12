@@ -125,7 +125,7 @@ slider.on_change('value',update_plot)
 x_select = Select(
     options=['Total_Bunuh_Diri', 'Populasi', 'GDP_Tahunan', 'Pendapatan_per_Kapita'],
     value='Total_Bunuh_Diri',
-    title='Data Kordinat X'
+    title='x-axis data'
 )
 # Attach the update_plot callback to the 'value' property of x_select
 x_select.on_change('value', update_plot)
@@ -134,7 +134,7 @@ x_select.on_change('value', update_plot)
 y_select = Select(
     options=['Total_Bunuh_Diri', 'Populasi', 'GDP_Tahunan', 'Pendapatan_per_Kapita'],
     value='Populasi',
-    title='Data Kordinat Y'
+    title='y-axis data'
 )
 # Attach the update_plot callback to the 'value' property of y_select
 y_select.on_change('value', update_plot)
